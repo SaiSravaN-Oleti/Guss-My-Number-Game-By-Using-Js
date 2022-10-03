@@ -11,7 +11,24 @@
 // console.log(document.querySelector('.guess').value);
 //this is used to help read 
 
+//generating the random number
+const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let score = 20;
+//handler function
 document.querySelector('.check').addEventListener
    ('click', function () {
-      console.log(document.querySelector('.guess').value);
+      const guess = document.querySelector('.guess').value;
+      if (!guess) {
+         document.querySelector('.message').textContent = '😂Enter some number !😂';
+      } else if (guess == secretNumber) {
+         document.querySelector('.message').textContent = '🎉Woow! Booutyful Nice Guess';
+      } else if (guess > secretNumber) {
+         document.querySelector('.message').textContent = '🛫Too High !!! ';
+         score++;
+         document.querySelector('.score').textContent = score;
+      } else if (guess < secretNumber) {
+         document.querySelector('.message').textContent = '😒😒Too Low...!!! ';
+         score--;
+         document.querySelector('.score').textContent = score;
+      }
    });
