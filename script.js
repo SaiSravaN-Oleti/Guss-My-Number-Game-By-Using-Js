@@ -3,6 +3,9 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+const displayMsg = function(message){
+   document.querySelector('.message').textContent = message;
+}
 
 //handler function
 document.querySelector('.check').addEventListener
@@ -10,11 +13,11 @@ document.querySelector('.check').addEventListener
       const guess = document.querySelector('.guess').value;
       //if there is no guess / no input
       if (!guess) {
-         document.querySelector('.message').textContent = '😂Enter some number !😂';
+         displayMsg('😂Enter some number !😂');
       }
       //if the guess val is same!
       else if (guess == secretNumber) {
-      document.querySelector('.message').textContent = '🎉Woow! Booutyful Nice Guess';
+      displayMsg('🎉Woow! Booutyful Nice Guess');
       document.querySelector('body').style.backgroundColor = '#2ebf91';
       document.querySelector('.number').style.width='60rem';
       document.querySelector('.number').textContent = '🏅'+secretNumber+'🏅';
@@ -25,11 +28,11 @@ document.querySelector('.check').addEventListener
       }
       else if(guess != secretNumber){
          if(score > 1 ){
-            document.querySelector('.message').textContent =  guess>secretNumber ? '📈 Too High!' : '📉 Too Low!';
+            displayMsg(`${guess>secretNumber ? '📈 Too High!' : '📉 Too Low!'}`);
             score--;
             document.querySelector('.score').textContent = score;
          }else {
-            document.querySelector('.message').textContent = 'You Lost!💣';
+            displayMsg('You Lost!💣');
             document.querySelector('.score').textContent = 0;
          }
       }
@@ -41,7 +44,7 @@ document.querySelector('.again').addEventListener('click',function(){
    document.querySelector('.score').textContent = score;
    document.querySelector('.number').textContent ='?';
    document.querySelector('.guess').textContent ='';
-   document.querySelector('.message').textContent = 'Start guessing...';
+   displayMsg('Start guessing...');
    document.querySelector('body').style.backgroundColor = '#222';
    document.querySelector('.number').style.width='15rem';
 });
