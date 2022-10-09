@@ -1,5 +1,4 @@
 'use strict';
-
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
@@ -14,7 +13,7 @@ document.querySelector('.check').addEventListener
          document.querySelector('.message').textContent = '😂Enter some number !😂';
       }
       //if the guess val is same!
-      else if (guess =s= secretNumber) {
+      else if (guess == secretNumber) {
       document.querySelector('.message').textContent = '🎉Woow! Booutyful Nice Guess';
       document.querySelector('body').style.backgroundColor = '#2ebf91';
       document.querySelector('.number').style.width='60rem';
@@ -24,9 +23,9 @@ document.querySelector('.check').addEventListener
             document.querySelector('.highscore').textContent = highscore;
          }
       }
-      else if(guess !== secretNumber){
+      else if(guess != secretNumber){
          if(score > 1 ){
-            ocument.querySelector('.message').textContent =  guess>secretNumber ? '📈 Too High!' : '📉 Too Low!';
+            document.querySelector('.message').textContent =  guess>secretNumber ? '📈 Too High!' : '📉 Too Low!';
             score--;
             document.querySelector('.score').textContent = score;
          }else {
@@ -34,8 +33,7 @@ document.querySelector('.check').addEventListener
             document.querySelector('.score').textContent = 0;
          }
       }
-
-   /*   //if guess val is high
+     /* //if guess val is high
       else if (guess > secretNumber) {
          if (score > 1) {
             document.querySelector('.message').textContent = '🛫Too High !!! ';
@@ -57,8 +55,8 @@ document.querySelector('.check').addEventListener
             document.querySelector('.score').textContent = 0;
          }
       }
-   });
 */
+});
 //hangle again btn to reset the all values
 document.querySelector('.again').addEventListener('click',function(){
    score = '20';
