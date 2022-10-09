@@ -33,29 +33,6 @@ document.querySelector('.check').addEventListener
             document.querySelector('.score').textContent = 0;
          }
       }
-     /* //if guess val is high
-      else if (guess > secretNumber) {
-         if (score > 1) {
-            document.querySelector('.message').textContent = '🛫Too High !!! ';
-            score--;
-            document.querySelector('.score').textContent = score;
-         } else {
-            document.querySelector('.message').textContent = '💣You Lost!💣';
-            document.querySelector('.score').textContent = 0;
-         }
-      }
-      //if guess val is low
-      else if (guess < secretNumber) {
-         if (score > 1) {
-            document.querySelector('.message').textContent = '😒😒Too Low...!!! ';
-            score--;
-            document.querySelector('.score').textContent = score;
-         } else {
-            document.querySelector('.message').textContent = '💣You Lost!💣';
-            document.querySelector('.score').textContent = 0;
-         }
-      }
-*/
 });
 //hangle again btn to reset the all values
 document.querySelector('.again').addEventListener('click',function(){
