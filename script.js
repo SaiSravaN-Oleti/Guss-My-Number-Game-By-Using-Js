@@ -12,7 +12,7 @@
 //this is used to help read 
 
 //generating the random number
-const secretNumber = Math.trunc(Math.random() * 20) + 1
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // console.log(secretNumber);
 let score = 20;
 
@@ -29,7 +29,8 @@ document.querySelector('.check').addEventListener
       else if (guess == secretNumber) {
          document.querySelector('.message').textContent = '🎉Woow! Booutyful Nice Guess';
       document.querySelector('body').style.backgroundColor = '#2ebf91';
-      document.querySelector('.number').style.width='30rem';
+      document.querySelector('.number').style.width='60rem';
+      document.querySelector('.number').textContent = '🎇🏅'+secretNumber+'🏅🎇';
       }
       //if guess val is high
       else if (guess > secretNumber) {
@@ -54,3 +55,14 @@ document.querySelector('.check').addEventListener
          }
       }
    });
+
+//hangle again btn to reset the all values
+document.querySelector('.again').addEventListener('click',function(){
+   score = '20';
+   secretNumber = Math.trunc(Math.random() * 20) + 1;
+   document.querySelector('.score').textContent = score;
+   document.querySelector('.number').textContent ='?';
+   document.querySelector('.guess').textContent ='';
+   document.querySelector('body').style.backgroundColor = '#222';
+   document.querySelector('.number').style.width='15rem';
+});
