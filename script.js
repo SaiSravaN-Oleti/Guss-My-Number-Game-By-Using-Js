@@ -13,7 +13,7 @@
 
 //generating the random number
 const secretNumber = Math.trunc(Math.random() * 20) + 1
-console.log(secretNumber);
+// console.log(secretNumber);
 let score = 20;
 
 
@@ -28,6 +28,8 @@ document.querySelector('.check').addEventListener
       //if the guess val is same!
       else if (guess == secretNumber) {
          document.querySelector('.message').textContent = '🎉Woow! Booutyful Nice Guess';
+      document.querySelector('body').style.backgroundColor = '#2ebf91';
+      document.querySelector('.number').style.width='30rem';
       }
       //if guess val is high
       else if (guess > secretNumber) {
