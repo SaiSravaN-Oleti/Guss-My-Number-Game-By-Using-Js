@@ -13,8 +13,8 @@
 
 //generating the random number
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-// console.log(secretNumber);
 let score = 20;
+let highscore = 0;
 
 
 //handler function
@@ -27,10 +27,14 @@ document.querySelector('.check').addEventListener
       }
       //if the guess val is same!
       else if (guess == secretNumber) {
-         document.querySelector('.message').textContent = '🎉Woow! Booutyful Nice Guess';
+      document.querySelector('.message').textContent = '🎉Woow! Booutyful Nice Guess';
       document.querySelector('body').style.backgroundColor = '#2ebf91';
       document.querySelector('.number').style.width='60rem';
-      document.querySelector('.number').textContent = '🎇🏅'+secretNumber+'🏅🎇';
+      document.querySelector('.number').textContent = '🏅'+secretNumber+'🏅';
+      if(score>highscore){
+         highscore = score;
+         document.querySelector('.highscore').textContent = highscore;
+      }
       }
       //if guess val is high
       else if (guess > secretNumber) {
@@ -63,6 +67,7 @@ document.querySelector('.again').addEventListener('click',function(){
    document.querySelector('.score').textContent = score;
    document.querySelector('.number').textContent ='?';
    document.querySelector('.guess').textContent ='';
+   document.querySelector('.message').textContent = 'Start guessing...';
    document.querySelector('body').style.backgroundColor = '#222';
    document.querySelector('.number').style.width='15rem';
 });
